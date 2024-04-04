@@ -13,61 +13,75 @@ document.addEventListener("DOMContentLoaded", function() {
 function searchServices(event){
     if(event.key === "Enter"){
         let searchInput = searchEl.value.trim().toLowerCase(); 
-        if(searchInput === "") {
+        if (searchInput === "") {
             servicesEl.innerHTML = originalServicesContent;
         }
-        else if(searchInput === "laundry"){
-            servicesEl.innerHTML = laundryContainer.innerHTML;
-        }
-        else if (searchInput ===  "dry clean"){
-            servicesEl.innerHTML = dryCleanEl.innerHTML;
-        }
-        else if(searchInput === "upholstery"){
-            servicesEl.innerHTML = upholsteryEl.innerHTML;
-        }
-        else if (searchInput === "steam ironing"){
-            servicesEl.innerHTML = steamIroningEl.innerHTML;
-        }
-        else if(searchInput === "home cleaning"){
-            servicesEl.innerHTML = homeCleaningEl.innerHTML;
-        }
-        else if(searchInput === "product store"){
-            servicesEl.innerHTML = productStoreEl.innerHTML;
-        }
-        else {
-            servicesEl.innerHTML = "No search result found!"; 
+        else{
+            let matchingServices = [];
+                if (searchInput ===  "dry clean" || "dry clean".includes(searchInput)) {
+                    matchingServices.push(dryCleanEl.innerHTML);
+                }
+                if (searchInput === "laundry" || "laundry".includes(searchInput)) {
+                    matchingServices.push(laundryContainer.innerHTML);
+                }
+                if (searchInput === "upholstery" || "upholstery".includes(searchInput)) {
+                    matchingServices.push(upholsteryEl.innerHTML);
+                }
+                if (searchInput === "steam ironing" || "steam ironing".includes(searchInput)) {
+                    matchingServices.push(steamIroningEl.innerHTML);
+                }
+                if (searchInput === "home cleaning" || "home cleaning".includes(searchInput)) {
+                    matchingServices.push(homeCleaningEl.innerHTML);
+                }
+                if (searchInput === "product store" || "product store".includes(searchInput)) {
+                    matchingServices.push(productStoreEl.innerHTML);
+                }
+                
+                if (matchingServices.length > 0) {
+                    servicesEl.innerHTML = matchingServices.join("");
+                } else {
+                    servicesEl.innerHTML = "No search result found!";
+                }
         }
     }
     else{
         let searchInput = searchEl.value.trim().toLowerCase(); 
+
         if (searchInput === "") {
             servicesEl.innerHTML = originalServicesContent;
         }
-        else if (searchInput ===  "dry clean" || "dry clean".includes(searchInput)){
-            servicesEl.innerHTML = dryCleanEl.innerHTML;
-        }
-        else if(searchInput === "laundry" || "laundry".includes(searchInput)){
-            servicesEl.innerHTML = laundryContainer.innerHTML;
-        }
-        else if(searchInput === "upholstery" || "upholstery".includes(searchInput)){
-            servicesEl.innerHTML = upholsteryEl.innerHTML;
-        }
-        else if (searchInput === "steam ironing" || "steam ironing".includes(searchInput)){
-            servicesEl.innerHTML = steamIroningEl.innerHTML;
-        }
-        else if(searchInput === "home cleaning" || "home cleaning".includes(searchInput)){
-            servicesEl.innerHTML = homeCleaningEl.innerHTML;
-        }
-        else if(searchInput === "product store" || "product store".includes(searchInput)){
-            servicesEl.innerHTML = productStoreEl.innerHTML;
-        }
-        else {
-            servicesEl.innerHTML = "No search result found!"; 
+        else{
+            let matchingServices = [];
+                if (searchInput ===  "dry clean" || "dry clean".includes(searchInput)) {
+                    matchingServices.push(dryCleanEl.innerHTML);
+                }
+                if (searchInput === "laundry" || "laundry".includes(searchInput)) {
+                    matchingServices.push(laundryContainer.innerHTML);
+                }
+                if (searchInput === "upholstery" || "upholstery".includes(searchInput)) {
+                    matchingServices.push(upholsteryEl.innerHTML);
+                }
+                if (searchInput === "steam ironing" || "steam ironing".includes(searchInput)) {
+                    matchingServices.push(steamIroningEl.innerHTML);
+                }
+                if (searchInput === "home cleaning" || "home cleaning".includes(searchInput)) {
+                    matchingServices.push(homeCleaningEl.innerHTML);
+                }
+                if (searchInput === "product store" || "product store".includes(searchInput)) {
+                    matchingServices.push(productStoreEl.innerHTML);
+                }
+                
+                if (matchingServices.length > 0) {
+                    servicesEl.innerHTML = matchingServices.join("");
+                } else {
+                    servicesEl.innerHTML = "No search result found!";
+                }
         }
     }
     
 }
 
 searchEl.addEventListener("keydown", searchServices);
-searchBtn.addEventListener("click",searchServices);
+searchEl.addEventListener("click",searchServices);
+
 });
