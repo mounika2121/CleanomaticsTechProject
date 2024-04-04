@@ -140,3 +140,10 @@ body {
     margin-top: 15px;
     color: rgb(95, 92, 92);
 }
+
+@media screen and (max-width: 768px){
+    .carousel-card-image{
+        height: 150px;
+        width: 150px;
+    }
+}
