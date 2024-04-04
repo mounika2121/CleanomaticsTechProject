@@ -10,78 +10,46 @@ document.addEventListener("DOMContentLoaded", function() {
     let productStoreEl = document.getElementById("productStore");
     let originalServicesContent = servicesEl.innerHTML;
 
-function searchServices(event){
-    if(event.key === "Enter"){
-        let searchInput = searchEl.value.trim().toLowerCase(); 
-        if (searchInput === "") {
-            servicesEl.innerHTML = originalServicesContent;
-        }
-        else{
+    function searchServices(event) {
+        if (event.key === "Enter" || event.type === "click") {
+            let searchInput = searchEl.value.trim().toLowerCase();
             let matchingServices = [];
-                if (searchInput ===  "dry clean" || "dry clean".includes(searchInput)) {
+
+            if (searchInput === "") {
+                servicesEl.innerHTML = originalServicesContent;
+                return;
+            }
+
+            if (searchInput.length === 1) {
+                
+                if ("dry clean".toLowerCase().startsWith(searchInput)) {
                     matchingServices.push(dryCleanEl.innerHTML);
                 }
-                if (searchInput === "laundry" || "laundry".includes(searchInput)) {
+                if ("laundry".toLowerCase().startsWith(searchInput)) {
                     matchingServices.push(laundryContainer.innerHTML);
                 }
-                if (searchInput === "upholstery" || "upholstery".includes(searchInput)) {
+                if ("upholstery".toLowerCase().startsWith(searchInput)) {
                     matchingServices.push(upholsteryEl.innerHTML);
                 }
-                if (searchInput === "steam ironing" || "steam ironing".includes(searchInput)) {
+                if ("steam ironing".toLowerCase().startsWith(searchInput)) {
                     matchingServices.push(steamIroningEl.innerHTML);
                 }
-                if (searchInput === "home cleaning" || "home cleaning".includes(searchInput)) {
+                if ("home cleaning".toLowerCase().startsWith(searchInput)) {
                     matchingServices.push(homeCleaningEl.innerHTML);
                 }
-                if (searchInput === "product store" || "product store".includes(searchInput)) {
+                if ("product store".toLowerCase().startsWith(searchInput)) {
                     matchingServices.push(productStoreEl.innerHTML);
                 }
-                
-                if (matchingServices.length > 0) {
-                    servicesEl.innerHTML = matchingServices.join("");
-                } else {
-                    servicesEl.innerHTML = "No search result found!";
-                }
+            }
+
+            if (matchingServices.length > 0) {
+                servicesEl.innerHTML = matchingServices.join("");
+            } else {
+                servicesEl.innerHTML = "No search result found!";
+            }
         }
     }
-    else{
-        let searchInput = searchEl.value.trim().toLowerCase(); 
 
-        if (searchInput === "") {
-            servicesEl.innerHTML = originalServicesContent;
-        }
-        else{
-            let matchingServices = [];
-                if (searchInput ===  "dry clean" || "dry clean".includes(searchInput)) {
-                    matchingServices.push(dryCleanEl.innerHTML);
-                }
-                if (searchInput === "laundry" || "laundry".includes(searchInput)) {
-                    matchingServices.push(laundryContainer.innerHTML);
-                }
-                if (searchInput === "upholstery" || "upholstery".includes(searchInput)) {
-                    matchingServices.push(upholsteryEl.innerHTML);
-                }
-                if (searchInput === "steam ironing" || "steam ironing".includes(searchInput)) {
-                    matchingServices.push(steamIroningEl.innerHTML);
-                }
-                if (searchInput === "home cleaning" || "home cleaning".includes(searchInput)) {
-                    matchingServices.push(homeCleaningEl.innerHTML);
-                }
-                if (searchInput === "product store" || "product store".includes(searchInput)) {
-                    matchingServices.push(productStoreEl.innerHTML);
-                }
-                
-                if (matchingServices.length > 0) {
-                    servicesEl.innerHTML = matchingServices.join("");
-                } else {
-                    servicesEl.innerHTML = "No search result found!";
-                }
-        }
-    }
-    
-}
-
-searchEl.addEventListener("keydown", searchServices);
-searchEl.addEventListener("click",searchServices);
-
+    searchEl.addEventListener("keydown", searchServices);
+    searchBtn.addEventListener("click", searchServices);
 });
