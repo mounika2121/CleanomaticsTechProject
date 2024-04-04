@@ -1,0 +1,142 @@
+body {
+    box-sizing: content-box;
+    padding-left: 15px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+.gradient-text {
+    background: -webkit-linear-gradient(left, #3333ff, #ff00cc); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right,  #3333ff, #ff00cc); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, #3333ff, #ff00cc); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right,  #3333ff, #ff00cc); /* Standard syntax */
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 20px;
+}
+
+.serach-input{
+    outline: none;
+    border: none;
+    width: 250px;
+    padding-left: 10px;
+    font-size: 16px;
+}
+
+.serach-top-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-contianer{
+    border: 2px solid rgb(153, 151, 151);
+    width: 300px;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.search-icon{
+    background-color: #3333ff;
+    height: 37px;
+    width: 40px;
+}
+
+.card-link{
+    text-decoration: none;
+}
+.icon-size{
+    font-size: 25px;
+    color: white;
+    text-align: center;
+}
+
+.services-images{
+    height: 100px;
+    width: 150px;
+    border: 1px solid rgb(226, 221, 221);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.services-images:hover{
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.services-names{
+    margin-top: 10px;
+    text-align: center;
+    color: rgb(97, 95, 95);
+}
+
+.services-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 35px;
+    margin-bottom: 15px;
+}
+
+.each-service{
+    margin-right: 25px;
+}
+
+
+.card-carousel{
+    background-color: transparent;
+}
+
+.carousel-indicators  button {
+    width: 10px !important;
+    height: 10px !important;
+    border-radius: 50%; 
+    background-color: #fff;
+    border: 1px solid #000;
+    margin-right: 5px;
+}
+
+.carousel-indicators .active {
+    background-color: transparent;
+    border: 2px solid #fff;
+}
+
+.carousel-inner-card{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-image: url("https://res.cloudinary.com/djbs4yqbz/image/upload/v1712189300/bg_image_lxhv4u.jpg");
+    background-size: cover;
+    margin-right: 15px;
+    margin-left: 15px;
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 20px;
+}
+
+.carousel-card-image{
+    height: 250px;
+    width: 250px;
+}
+
+.hot-deals-heading{
+    padding-left: 20px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    color: rgb(95, 92, 92);
+}
